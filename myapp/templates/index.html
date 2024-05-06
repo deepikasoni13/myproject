@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my web application</title>
+</head>
+<body>
+    <h1>Employee information system</h1>
+    <a href="{% url 'registration' %}">New Employee Registration</a>
+    <br><br>
+        <table border="=1"> 
+            <tr>
+                <th>Employee Id</th>
+                <th>Employee name</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+            {% for e in emp %}
+            <tr>
+                <td>{{e.empid}}</td>
+                <td>{{e.empname}}</td>
+                <td>{{e.department}}</td>
+                <td>{{e.salary}}</td>
+                <td>
+                    <a href="{%  url 'delemp' id=e.empid %}">Delete</a>
+                </td>
+                <td>
+                    <a href="{% url 'viewemp' id=e.empid %}">Update</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </h1>
+</body>
+</html>

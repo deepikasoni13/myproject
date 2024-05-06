@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+</head>
+<body>
+    <h1>Employee Registration form</h1>
+    <form method="post" action="{% url 'regcode' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Enter Employee Id</td>
+                <td>
+                    <input type="number" name="empid" required/>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Employee name</td>
+                <td>
+                    <input type="text" name="empname" required/>
+                </td>
+            </tr>
+            <td>Enter department</td>
+            <td>
+                <input type="text" name="department"required/>            
+            </td>
+            <tr>
+                <td>Enter salary</td>
+                <td>
+                    <input type="number" name="salary"required/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="register"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>
